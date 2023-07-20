@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public enum PowerUpType { None, Pushback, Rockets }
+public enum PowerupType { None, Pushback, Rockets }
 
 public class Powerup : MonoBehaviour
 {
-    public PowerUpType type;
+    public PowerupType type;
+    public bool hasCooldown;
+    public int cooldownDuration;
 }

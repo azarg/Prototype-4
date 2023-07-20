@@ -342,11 +342,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba84f3fd76701884997de86622fa353a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupIndicatorPrefab: {fileID: 0}
-  offset: {x: 0, y: 0, z: 0}
-  hasPowerup: 0
+  powerupIndicatorPrefab: {fileID: 8672103038224505008, guid: 55ae4c56c0d357642bd50466cccacae0, type: 3}
+  powerupPushPrefab: {fileID: 3006927168908824432, guid: 57dc38d4e9510544b9ec39acfde1c9b0, type: 3}
+  powerupRocketsPrefab: {fileID: 192068, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
+  offset: {x: 0, y: -0.5, z: 0}
+  offsetOverhead: {x: 0, y: 1.5, z: 0}
   powerupStrength: 15
-  enemyTag: 
 --- !u!1 &935683198
 GameObject:
   m_ObjectHideFlags: 0
