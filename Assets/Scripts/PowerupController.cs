@@ -8,7 +8,6 @@ public class PowerupController : MonoBehaviour
     public Vector3 offset;
     public bool hasPowerup = false;
     public float powerupStrength = 15;
-    public string enemyTag;
 
     private GameObject powerupIndicator;
 
@@ -53,7 +52,7 @@ public class PowerupController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (hasPowerup && collision.gameObject.CompareTag(enemyTag))
+        if (hasPowerup && collision.gameObject.CompareTag("Enemy"))
         {
             var enemyRb = collision.gameObject.GetComponent<Rigidbody>();
             var direction = (collision.gameObject.transform.position - transform.position);

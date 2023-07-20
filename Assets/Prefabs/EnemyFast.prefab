@@ -14,9 +14,8 @@ GameObject:
   - component: {fileID: 1818594139006453563}
   - component: {fileID: 1818594139006453562}
   - component: {fileID: 3459315094199145191}
-  - component: {fileID: 543960521890167094}
   m_Layer: 0
-  m_Name: EnemyX
+  m_Name: EnemyFast
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,21 +127,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71df4aaf3d3133346b4872b73fdcea8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &543960521890167094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818594139006453561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba84f3fd76701884997de86622fa353a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerupIndicatorPrefab: {fileID: 8672103038224505008, guid: 55ae4c56c0d357642bd50466cccacae0, type: 3}
-  offset: {x: 0, y: -0.5, z: 0}
-  hasPowerup: 1
-  powerupStrength: 7
-  enemyTag: Player
+  speed: 2
