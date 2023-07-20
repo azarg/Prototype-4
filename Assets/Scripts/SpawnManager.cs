@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public GameObject enemyXPrefab;
-    public GameObject powerupPrefab;
+    public GameObject[] powerupPrefabs;
     public float chanceToSpawnX;
     private PlayerController playerController;
 
@@ -14,19 +14,9 @@ public class SpawnManager : MonoBehaviour
     public int enemyCount;
     public int waveNumber = 1;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerController = FindFirstObjectByType<PlayerController>();
-        //for (int j = 0; j < 10000; j++)
-        //{
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        int x = Random.Range(0, 100);
-        //        Debug.Log(x < (80 + i * 10) && x < 97);
-        //        //Debug.Log(x > 97);
-        //    }
-        //}
     }
 
     private void StartWave(int count)
@@ -35,10 +25,6 @@ public class SpawnManager : MonoBehaviour
         {
             GameObject prefab;
             int x = Random.Range(0, 100);
-            // first enemy has 30% chance of being X
-            // second enemy has 20% chance of being X
-            // third enemy has 10% chance of being X
-            // remaining enemies have 10% chance
             prefab = x < (100 * chanceToSpawnX) ? enemyXPrefab : enemyPrefab;
 
             Instantiate(prefab, RandomPos(), Quaternion.identity);
@@ -51,7 +37,7 @@ public class SpawnManager : MonoBehaviour
         var z = Random.Range(-spawnRange, spawnRange);
         return new Vector3(x,0,z);
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (playerController.gameOver)
@@ -71,7 +57,8 @@ public class SpawnManager : MonoBehaviour
         {
             StartWave(waveNumber);
             waveNumber++;
-            Instantiate(powerupPrefab, RandomPos(), Quaternion.identity);
+            Instantiate(powerupPrefabs[0], RandomPos(), Quaternion.identity);
+            Instantiate(powerupPrefabs[1], RandomPos(), Quaternion.identity);
         }
     }
 }

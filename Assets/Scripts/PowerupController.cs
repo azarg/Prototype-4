@@ -17,14 +17,12 @@ public class PowerupController : MonoBehaviour
         Destroy(powerupIndicator);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         powerupIndicator = Instantiate(powerupIndicatorPrefab);
         powerupIndicator.SetActive(hasPowerup);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (hasPowerup)
