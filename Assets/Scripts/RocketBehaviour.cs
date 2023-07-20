@@ -8,7 +8,6 @@ public class RocketBehaviour : MonoBehaviour
     public float speed = 10;
     public float strength = 10;
     public float aliveTimer = 1.5f;
-    public float fireCooldown = 0.5f;
 
     private Transform target;
     private Vector3 direction;

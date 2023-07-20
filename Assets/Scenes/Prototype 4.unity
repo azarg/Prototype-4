@@ -314,7 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: 0
-  speed: 2
+  speed: 3
 --- !u!4 &564405866
 Transform:
   m_ObjectHideFlags: 0
