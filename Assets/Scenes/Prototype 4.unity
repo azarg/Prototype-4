@@ -342,11 +342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba84f3fd76701884997de86622fa353a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupIndicatorPrefab: {fileID: 8672103038224505008, guid: 55ae4c56c0d357642bd50466cccacae0, type: 3}
-  offset: {x: 0, y: -0.5, z: 0}
+  powerupIndicatorPrefab: {fileID: 0}
+  offset: {x: 0, y: 0, z: 0}
   hasPowerup: 0
   powerupStrength: 15
-  enemyTag: Enemy
+  enemyTag: 
 --- !u!1 &935683198
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,7 +378,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 723827665962477008, guid: d5f460eea4ce57046b5b5b029ec81c64, type: 3}
   enemyXPrefab: {fileID: 1818594139006453561, guid: ee21653c79b7e464fbc38ebc6a51ecdf, type: 3}
-  powerupPrefab: {fileID: 3006927168908824432, guid: 57dc38d4e9510544b9ec39acfde1c9b0, type: 3}
+  powerupPrefabs:
+  - {fileID: 3006927168908824432, guid: 57dc38d4e9510544b9ec39acfde1c9b0, type: 3}
+  - {fileID: 192068, guid: 6f3d65a695e7abd46bde807842983d4a, type: 3}
   chanceToSpawnX: 0.5
   enemyCount: 0
   waveNumber: 1
