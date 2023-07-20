@@ -111,5 +111,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  hasCooldown: 1
+  hasCooldown: 0
   cooldownDuration: 2

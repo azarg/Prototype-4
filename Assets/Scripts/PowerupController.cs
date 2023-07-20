@@ -37,6 +37,34 @@ public class PowerupController : MonoBehaviour
             powerupIndicator.transform.position = transform.position + offset;
             powerupOverheadIndicator.transform.position = transform.position + offsetOverhead;
         }
+        if (powerupType == PowerupType.Rockets)
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                RemovePowerup();
+            }
+        }
+    }
+    private void RemovePowerup()
+    {
+        powerupType = PowerupType.None;
+        powerupIndicator.SetActive(false);
+        Destroy(powerupOverheadIndicator);
+    }
+
+    private void AddPowerup(Powerup powerup)
+    {
+        powerupType = powerup.type;
+        powerupIndicator.SetActive(true);
+        switch (powerup.type)
+        {
+            case PowerupType.Rockets:
+                powerupOverheadIndicator = Instantiate(powerupRocketsPrefab);
+                break;
+            case PowerupType.Pushback:
+                powerupOverheadIndicator = Instantiate(powerupPushPrefab);
+                break;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -46,34 +74,20 @@ public class PowerupController : MonoBehaviour
         if (other.CompareTag("Powerup"))
         {
             Destroy(other.gameObject);
-            StartCoroutine(Powerup(other.gameObject.GetComponent<Powerup>()));
+            var powerup = other.gameObject.GetComponent<Powerup>();
+            AddPowerup(powerup);
+            StartCoroutine(PowerupCooldown(powerup));
         }
     }
-
-    IEnumerator Powerup(Powerup powerup)
+ 
+    IEnumerator PowerupCooldown(Powerup powerup)
     {
-        powerupType = powerup.type;
-        powerupIndicator.SetActive(true);
-        if (powerup.type == PowerupType.Pushback)
-        {
-            powerupOverheadIndicator = Instantiate(powerupPushPrefab);
-        }
-        else if (powerup.type == PowerupType.Rockets)
-        {
-            powerupOverheadIndicator = Instantiate(powerupRocketsPrefab);
-        }
         if (powerup.hasCooldown)
         {
             yield return new WaitForSeconds(powerup.cooldownDuration);
-
-            powerupType = PowerupType.None;
-            powerupIndicator.SetActive(false);
-            Destroy(powerupOverheadIndicator);
+            RemovePowerup();
         }
-        else
-        {
-            yield return null;
-        }
+        else yield return null;
     }
 
     private void OnCollisionEnter(Collision collision)
