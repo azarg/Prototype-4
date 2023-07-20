@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject enemyPrefab;
     public GameObject enemyXPrefab;
     public GameObject powerupPrefab;
-
+    public float chanceToSpawnX;
     private PlayerController playerController;
 
     private float spawnRange = 9;
@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
             // second enemy has 20% chance of being X
             // third enemy has 10% chance of being X
             // remaining enemies have 10% chance
-            prefab = x > 80 ? enemyXPrefab : enemyPrefab;
+            prefab = x < (100 * chanceToSpawnX) ? enemyXPrefab : enemyPrefab;
 
             Instantiate(prefab, RandomPos(), Quaternion.identity);
         }
@@ -71,7 +71,7 @@ public class SpawnManager : MonoBehaviour
         {
             StartWave(waveNumber);
             waveNumber++;
-            //Instantiate(powerupPrefab, RandomPos(), Quaternion.identity);
+            Instantiate(powerupPrefab, RandomPos(), Quaternion.identity);
         }
     }
 }

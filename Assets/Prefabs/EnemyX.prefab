@@ -143,6 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerupIndicatorPrefab: {fileID: 8672103038224505008, guid: 55ae4c56c0d357642bd50466cccacae0, type: 3}
   offset: {x: 0, y: -0.5, z: 0}
-  hasPowerup: 0
-  powerupStrength: 3
+  hasPowerup: 1
+  powerupStrength: 7
   enemyTag: Player

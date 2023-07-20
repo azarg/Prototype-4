@@ -55,12 +55,11 @@ public class PowerupController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(enemyTag))
+        if (hasPowerup && collision.gameObject.CompareTag(enemyTag))
         {
             var enemyRb = collision.gameObject.GetComponent<Rigidbody>();
             var direction = (collision.gameObject.transform.position - transform.position);
-            float force = hasPowerup ? powerupStrength : powerupStrength;
-            enemyRb.AddForce(direction * force, ForceMode.Impulse);
+            enemyRb.AddForce(direction * powerupStrength, ForceMode.Impulse);
         }
     }
 }
