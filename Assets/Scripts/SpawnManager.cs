@@ -57,8 +57,8 @@ public class SpawnManager : MonoBehaviour
         {
             StartWave(waveNumber);
             waveNumber++;
-            Instantiate(powerupPrefabs[0], RandomPos(), Quaternion.identity);
-            Instantiate(powerupPrefabs[1], RandomPos(), Quaternion.identity);
+            int i = Random.Range(0, powerupPrefabs.Length);
+            Instantiate(powerupPrefabs[i], RandomPos(), Quaternion.identity);
         }
     }
 }
